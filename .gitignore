@@ -1,0 +1,54 @@
+# Godot project files
+*.tscn
+*.cs
+*.gd
+*.gdns
+*.gdnlib
+*.res
+*.scn
+*.import
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.prefs
+
+# Export templates and presets
+export_presets.cfg
+*._export
+
+# Editor and user data
+.editorconfig
+.project
+.idea
+*.csproj.*
+*.csproj.user
+*.swp
+*.swo
+*~
+
+# Build output
+bin/
+obj/
+Debug/
+Release/
+x86/
+x64/
+build/
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Godot cache
+.cache/
+
+# Import logs
+.import/
+
+# Temporary files
+tmp/
+temp/
