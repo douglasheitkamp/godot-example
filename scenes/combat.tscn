@@ -3,32 +3,14 @@
 [ext_resource type="Script" path="res://scripts/combat_ui.gd" id="1_combat_ui_gd"]
 [ext_resource type="Script" path="res://scripts/combat_manager.gd" id="2_combat_manager_gd"]
 
-[sub_resource type="Control" id="CombatUI_panel"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[sub_resource type="ProgressBar" id="HealthBar"]
-show_percentage = false
-max_value = 100.0
-value = 100.0
-
-[sub_resource type="ProgressBar" id="EnemyHealthBar"]
-show_percentage = false
-max_value = 100.0
-value = 100.0
-
 [node name="CombatUI" type="Control"]
-script = ExtResource("1_combat_ui_gd")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_combat_ui_gd")
 
 [node name="HealthContainer" type="Control" parent="."]
 layout_mode = 1
