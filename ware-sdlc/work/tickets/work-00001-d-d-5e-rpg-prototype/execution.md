@@ -5,14 +5,14 @@ Ticket: [ticket.yaml](ticket.yaml)
 
 ## Current Checkpoint
 
-**Time:** 2026-10-27T09:30:00Z
+**Time:** 2026-10-27T10:00:00Z
 **Owner:** Claude
-**Phase:** Implementation - Script completion
-**Saved revisions:** work-00001-d-d-5e-rpg-prototype branch (commit bd7807e)
-**Unfinished work:** Godot scene files (.tscn) for world and combat
+**Phase:** Implementation - Complete
+**Saved revisions:** work-00001-d-d-5e-rpg-prototype branch (commit 14f03fb)
+**Unfinished work:** None - MVP code complete
 **Active workers:** None
 **Attempts used:** Initial setup
-**Next action:** Create Godot scene files
+**Next action:** Review and testing
 
 ## Task Runs
 
@@ -23,22 +23,23 @@ Ticket: [ticket.yaml](ticket.yaml)
 | Combat system | Done | Claude | scripts/combat_manager.gd | 1 | Complete |
 | Combat UI | Done | Claude | scripts/combat_ui.gd | 1 | Complete |
 | Project setup | Done | Claude | project.godot | 1 | Complete |
-| World scene | Pending | Claude | scenes/world.tscn | 0 | Create scene |
-| Combat scene | Pending | Claude | scenes/combat.tscn | 0 | Create scene |
+| World scene | Done | Claude | scenes/world.tscn | 1 | Complete |
+| Combat scene | Done | Claude | scenes/combat.tscn | 1 | Complete |
 
 ## Evaluation History
 
-**Pending:** No checks run yet.
+**Pending:** No checks run yet. Ready for Godot engine testing.
 
 ## Integration and Acceptance
 
-**Pending:** Integration testing not started.
+**Pending:** Integration testing not started. To verify:
+1. Open project in Godot 4.7
+2. Test player movement in world scene
+3. Test combat system by triggering an encounter
 
 ## Blockers and Decisions
 
-1. **Godot Engine not installed** - Scene files (.tscn) cannot be created with the editor. Options:
-   - Install Godot via Homebrew: `brew install godot`
-   - Create .tscn files manually (Godot uses TOML format for scenes)
+None.
 
 ## Handoffs
 
