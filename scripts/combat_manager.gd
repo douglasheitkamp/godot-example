@@ -31,14 +31,15 @@ func start_combat(player_character: Node, enemies: Array) -> void:
 	var player_actor = CombatActor.new()
 	player_actor.name = "Player"
 	player_actor.character = player_character
-	player_actor.initiative = player_character.roll_d20() + player_character.get_modifier(player_character.dexterity)
+	var dex_mod = int((player_character.dexterity - 10) / 2)
+	player_actor.initiative = player_character.roll_d20() + dex_mod
 	player_actor.is_player = true
 	turn_order.append(player_actor)
 
 	# Enemy initiatives
 	for enemy in enemies:
 		var enemy_actor = CombatActor.new()
-		enemy_actor.name = enemy.get("name", "Enemy")
+		enemy_actor.name = enemy.name if enemy.has("name") else "Enemy"
 		enemy_actor.character = enemy
 		enemy_actor.initiative = enemy.roll_d20() if enemy.has_method("roll_d20") else randi_range(1, 20)
 		enemy_actor.is_player = false
@@ -47,7 +48,7 @@ func start_combat(player_character: Node, enemies: Array) -> void:
 	# Sort by initiative (descending)
 	turn_order.sort_custom(self, "sort_initiative")
 
-	print("Combat started! Turn order: %s" % [actor.name for actor in turn_order])
+	print("Combat started! Turn order: " + str([actor.name for actor in turn_order]))
 
 func sort_initiative(a: CombatActor, b: CombatActor) -> bool:
 	return a.initiative > b.initiative
@@ -61,10 +62,12 @@ func next_turn() -> void:
 	current_turn_index = (current_turn_index + 1) % turn_order.size()
 	if current_turn_index == 0:
 		combat_round += 1
-	print("Round %d, turn: %s" % [combat_round, get_current_actor().name])
+	var actor = get_current_actor()
+	print("Round " + str(combat_round) + ", turn: " + actor.name)
 
 func end_combat(won: bool) -> void:
 	is_combat_active = false
-	print("Combat ended! Result: %s" % ["Lost", "Won"][won])
+	var result = "Won" if won else "Lost"
+	print("Combat ended! Result: " + result)
 	# Return to exploration
 	get_tree().change_scene_to_file("res://scenes/world.tscn")

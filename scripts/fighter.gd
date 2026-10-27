@@ -5,7 +5,7 @@ extends "res://scripts/character.gd"
 
 # Fighter class features
 @export var fighter_level: int = 1
-@export var fighting_style: String = "defense"  # defense, dueling, great weapon, protection
+@export var fighting_style: String = "defense"
 @export var second_wind: bool = true
 @export var second_wind_available: bool = true
 @export var action_surge: bool = true
@@ -17,8 +17,7 @@ var indomitable: bool = false
 var extra_attack: bool = false
 
 func _ready():
-	super._ready()
-	apply_fighter_features()
+	.apply_fighter_features()
 
 func apply_fighter_features():
 	# Apply class features based on level
@@ -54,7 +53,7 @@ func attack(target: Node) -> Dictionary:
 	}
 
 	var attack_roll = self.attack_roll()
-	var target_ac = target.get("armor_class", 10)
+	var target_ac = target.get("armor_class") if target.has_method("get") else 10
 
 	if attack_roll >= target_ac:
 		result.hit = true

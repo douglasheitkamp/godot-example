@@ -6,7 +6,7 @@
 script = ExtResource("1_player_gd")
 
 [node name="Player" type="Sprite2D" parent="."]
-transform = Transform2D(1, 0, 0, 1, 0, 0)
+transform = Transform2D(1 0 0 1 0 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
