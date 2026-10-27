@@ -1,0 +1,27 @@
+# Input map for D&D 5e RPG
+
+map_version=2
+
+[action "ui_up"]
+deadzone=0.5
+events=Key(W)
+
+[action "ui_down"]
+deadzone=0.5
+events=Key(S)
+
+[action "ui_left"]
+deadzone=0.5
+events=Key(A)
+
+[action "ui_right"]
+deadzone=0.5
+events=Key(D)
+
+[action "ui_select"]
+deadzone=0.5
+events=Key(Enter);Key(Space);JoyButton(0)
+
+[action "ui_cancel"]
+deadzone=0.5
+events=Key(Escape);JoyButton(1)

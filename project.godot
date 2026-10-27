@@ -8,10 +8,6 @@ run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.svg"
 
-[editor_plugins]
-
-enabled= []
-
 [export_presets]
 
 preset.00/name="Android"
