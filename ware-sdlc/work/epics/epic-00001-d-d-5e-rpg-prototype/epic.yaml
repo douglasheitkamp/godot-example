@@ -1,0 +1,11 @@
+# Reusable template; init does not create a real epic.
+epic:
+  id: "epic-00001-d-d-5e-rpg-prototype" # Five-digit component; matches the epic folder.
+  title: "D&D 5e RPG Prototype"
+  outcome: "A working Godot prototype demonstrating D&D 5e rules in a 2D RPG with fighter class, open world exploration, and turn-based combat"
+
+# Optional even when the project uses Jira. Include only verified values.
+# Capture the verified Jira page URL as well as its key; resolve key-only inputs when possible.
+# jira:
+#   key: "<jira-epic-key>"
+#   url: "<jira-epic-url>"

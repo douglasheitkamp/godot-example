@@ -1,0 +1,47 @@
+# Reusable template; init does not create a real ticket.
+work:
+  id: "work-00001-d-d-5e-rpg-prototype" # Five-digit component; stable and matches folder.
+  title: "D&D 5e RPG Prototype"
+  type: "feature" # One of the project's configured ticket_types.
+  state: ready # ready | in-progress | review | completed | rejected
+  created_by: "user" # Confirmed user identity
+  assignee: null # Required before in-progress.
+  rejected_reason: null # Only on rejected work: why it was decided against.
+
+epics: # At least one existing local epic; a ticket may belong to several.
+  - id: "epic-00001-d-d-5e-rpg-prototype"
+
+depends_on: [] # Work IDs (work-NNNNN-slug) that must be completed first.
+
+tags: []
+
+timestamps:
+  created_at: "2026-10-26T20:00:00Z" # Required actual UTC timestamp when a ticket is created.
+  started_at: null # First in-progress transition; never reset on resume.
+  completed_at: null # Set at accepted completion.
+  rejected_at: null # Only on rejected work: when it was decided against.
+
+artifacts:
+  intent:
+    state: draft # draft | ready. An intent always exists; ready means agreed.
+  spec:
+    state: not-needed # needed | draft | ready | not-needed
+    reason: "The intent is clear and complete for a prototype"
+  plan:
+    state: not-needed # needed | draft | ready | not-needed
+    reason: "Small prototype with well-understood scope"
+
+estimation:
+  method: hours # Copy the project's method.
+  # For hours method, use initial and retrospective:
+  initial: 40 # Required when ready
+  retrospective: null # Required at close
+
+# Optional verified external links:
+# jira:
+#   key: "<jira-ticket-key>"
+#   url: "<jira-ticket-url>"
+# github:
+#   pull_request: # Written when the pull request opens; one per work item.
+#     number: <pull-request-number>
+#     url: "<pull-request-url>" # Status and merge are read from the host, never stored.
