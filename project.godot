@@ -1,11 +1,23 @@
-; Engine configuration file. Do not modify manually.
-; https://docs.godotengine.org/en/stable/classes/class_projectsettings.html
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
 config/name="D&D 5e RPG Prototype"
-run/main_scene="res://scenes/world.tscn"
-config/features=PackedStringArray("4.3")
+# Main scene will be created in Godot editor
+# run/main_scene="res://scenes/world.tscn"
+config/features=PackedStringArray("4.7")
 config/icon="res://icon.svg"
 
 [export_presets]
@@ -16,7 +28,7 @@ preset.00/debug=true
 preset.00/export_filename="bin/dnd-rpg-android.apk"
 preset.00/encrypt_key=""
 preset.00/export_type="0"
-preset.00/scenes_to_include= []
+preset.00/scenes_to_include=[]
 preset.00/include_resources=true
 preset.00/abc=false
 preset.00/custom_package=""
