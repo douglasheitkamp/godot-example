@@ -46,7 +46,8 @@ func start_combat(player_character: Node, enemies: Array) -> void:
 		turn_order.append(enemy_actor)
 
 	# Sort by initiative (descending)
-	turn_order.sort_custom(self, "sort_initiative")
+	var sort_callable = Callable(self, "sort_initiative")
+	turn_order.sort_custom(sort_callable)
 
 	var names = []
 	for actor in turn_order:
