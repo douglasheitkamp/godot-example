@@ -26,6 +26,6 @@ We want to create a 2D RPG game inspired by Dragon Quest/Dragon Warrior, but wit
 - Multiple classes or races
 - Complex spell systems
 
-## Open Questions
+## UI Style (Answered)
 
-1. What UI style should be used for character stats and combat actions?
+Modern RPG style: HUD with health/magic bars, action buttons at bottom of screen.
