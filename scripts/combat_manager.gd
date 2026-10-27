@@ -48,7 +48,10 @@ func start_combat(player_character: Node, enemies: Array) -> void:
 	# Sort by initiative (descending)
 	turn_order.sort_custom(self, "sort_initiative")
 
-	print("Combat started! Turn order: " + str([actor.name for actor in turn_order]))
+	var names = []
+	for actor in turn_order:
+		names.append(actor.name)
+	print("Combat started! Turn order: " + str(names))
 
 func sort_initiative(a: CombatActor, b: CombatActor) -> bool:
 	return a.initiative > b.initiative
