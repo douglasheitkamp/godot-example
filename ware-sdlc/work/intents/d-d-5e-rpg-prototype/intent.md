@@ -8,9 +8,10 @@ We want to create a 2D RPG game inspired by Dragon Quest/Dragon Warrior, but wit
 
 1. A Godot project with a fighter class character using D&D 5e stats (HP, AC, ability scores, proficiency bonus)
 2. Open world exploration with grid-based movement
-3. Turn-based combat system with action economy (Action, Bonus Action)
+3. 1:1 turn-based combat on a grid (no positioning, like Dragon Warrior)
 4. Skill checks with advantage/disadvantage mechanics
-5. Single area prototype that demonstrates the complete loop
+5. Random encounters based on location
+6. Single area prototype that demonstrates the complete loop
 
 ## Hard Constraints
 
@@ -27,6 +28,4 @@ We want to create a 2D RPG game inspired by Dragon Quest/Dragon Warrior, but wit
 
 ## Open Questions
 
-1. Should the combat system use a grid/tile-based battle system or free-form positioning?
-2. What UI style should be used for character stats and combat actions?
-3. Should random encounters be based on location or time-based?
+1. What UI style should be used for character stats and combat actions?
