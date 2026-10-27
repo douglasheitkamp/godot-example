@@ -1,0 +1,11 @@
+# Reusable template; init does not create a real epic.
+epic:
+  id: "epic-00001-short-summary" # Five-digit component; matches the epic folder.
+  title: "<epic-title>"
+  outcome: "<intended-outcome>"
+
+# Optional even when the project uses Jira. Include only verified values.
+# Capture the verified Jira page URL as well as its key; resolve key-only inputs when possible.
+# jira:
+#   key: "<jira-epic-key>"
+#   url: "<jira-epic-url>"

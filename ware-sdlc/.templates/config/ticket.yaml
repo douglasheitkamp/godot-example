@@ -1,0 +1,56 @@
+# Reusable template; init does not create a real ticket.
+work:
+  id: "work-00001-short-summary" # Five-digit component; stable and matches folder.
+  title: "<work-title>"
+  type: "<ticket-type>" # One of the project's configured ticket_types.
+  state: ready # ready | in-progress | review | completed | rejected
+  created_by: "<confirmed-user-identity>"
+  assignee: null # Required before in-progress.
+  rejected_reason: null # Only on rejected work: why it was decided against.
+
+epics: # At least one existing local epic; a ticket may belong to several.
+  - id: "<existing-local-epic-id>"
+
+depends_on: [] # Work IDs (work-NNNNN-slug) that must be completed first.
+
+tags: []
+
+timestamps:
+  created_at: null # Required actual UTC timestamp when a ticket is created.
+  started_at: null # First in-progress transition; never reset on resume.
+  completed_at: null # Set at accepted completion.
+  rejected_at: null # Only on rejected work: when it was decided against.
+
+artifacts:
+  intent:
+    state: draft # draft | ready. An intent always exists; ready means agreed.
+  spec:
+    state: needed # needed | draft | ready | not-needed
+    # reason: "<why-skipped>" # Required for not-needed.
+  plan:
+    state: needed # needed | draft | ready | not-needed
+    # reason: "<why-skipped>" # Required for not-needed.
+
+estimation:
+  method: points # Copy the project's method.
+  # The four fields below apply when the method is points. They separate who is
+  # estimating from what is being estimated, so the numbers stay comparable.
+  human_story_points_with_ai: null # Ask the user; recommend only if asked.
+  human_story_points_without_ai: null # Model's estimate of the human effort without AI.
+  ai_story_points_before_work: null # Model's estimate before delivery starts.
+  ai_story_points_after_work: null # Model reassesses at close; unset until then.
+  # Use the project's configured scale for all four. Unknown values stay null.
+  # Preserve before-work estimates rather than replacing them with hindsight.
+  #
+  # For any other method, omit those four and use these two instead:
+  # initial: null # Required when ready; preserve the original estimate.
+  # retrospective: null # Required at close; sizing with hindsight, not measured time.
+
+# Optional verified external links:
+# jira:
+#   key: "<jira-ticket-key>"
+#   url: "<jira-ticket-url>"
+# github:
+#   pull_request: # Written when the pull request opens; one per work item.
+#     number: <pull-request-number>
+#     url: "<pull-request-url>" # Status and merge are read from the host, never stored.

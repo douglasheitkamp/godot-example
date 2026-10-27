@@ -1,0 +1,10 @@
+project:
+  id: godot-example
+  name: godot-example
+git:
+  base_branch: main
+  branch_pattern: '{work_id}'
+  commit_message_pattern: '{work_id}: {summary}'
+ticket_types: [feature, bug, chore, spike]
+estimation:
+  method: hours

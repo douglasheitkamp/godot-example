@@ -1,0 +1,60 @@
+# Reusable template. Init fills the actual project config with confirmed values.
+project:
+  id: "<project-id>"
+  name: "<project-name>"
+
+git:
+  base_branch: main
+  branch_pattern: "{work_id}"
+  commit_message_pattern: "{work_id}: {summary}"
+  # Optional, for opening pull requests. Match the title format any required
+  # title check enforces. Placeholders: {type} {jira_key} {summary}.
+  # pr_title_pattern: "{type}({jira_key}): {summary}"
+  # pr_title_types: {feature: feat, bug: fix, chore: chore, spike: docs} # One entry per ticket type.
+  # pr_no_jira_key: NOJIRA # Used when a ticket has no Jira link.
+  # merge_method: squash # squash | merge | rebase
+
+# The ticket types this project recognizes. Every ticket's type is one of these,
+# so keep the set small enough that each one has an obvious home.
+#   feature - new or changed capability
+#   bug     - defect in behavior that already shipped
+#   chore   - maintenance with no behavior change
+#   spike   - time-boxed investigation that answers a question
+# Add more only when a type would be reported on or handled differently;
+# docs, refactor, and hotfix are the usual candidates.
+ticket_types: [feature, bug, chore, spike]
+
+estimation:
+  method: points # points | t-shirt | hours
+  scale: [1, 2, 3, 5, 8, 13] # Confirm the ordered scale with the user.
+  # For t-shirt: an ordered list such as [XS, S, M, L, XL].
+  # For hours: omit scale.
+  # Optional rough effort ranges for points, not automatic conversion:
+  # hours_guide:
+  #   3: {min: 4, max: 8}
+
+# Optional available models or aliases; suggestions, not automatic switching.
+# models:
+#   simple: "<model-or-alias>"
+#   everyday: "<model-or-alias>"
+#   complex: "<model-or-alias>"
+
+# Optional. Authentication is configured outside this file.
+# jira:
+#   site: "https://example.atlassian.net"
+#   project_key: "<project-key>"
+#   # Moving a linked issue when delivery starts the work. Name the transition
+#   # as Jira shows it, and the status the issue lands in.
+#   start:
+#     transition: "<in-progress transition>"
+#     status: "<in-progress status>"
+#   # Closing a linked issue when work is rejected. Name the transition as Jira
+#   # shows it, the status it lands in, and a resolution it accepts.
+#   reject:
+#     transition: "<closing transition>"
+#     status: "<closed status>"
+#     resolution: "<resolution, e.g. a won't-do or cancelled value>"
+
+# Optional:
+# github:
+#   repository: "<owner>/<repository>"
