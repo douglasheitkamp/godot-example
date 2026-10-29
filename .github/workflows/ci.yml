@@ -1,0 +1,67 @@
+# CI/CD Pipeline for D&D 5e RPG Prototype
+# Runs on push and pull requests
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Godot Engine
+        uses: GodotEngine/godot-action@v2
+        with:
+          version: 4.7.2
+
+      - name: Check GDScript syntax
+        run: |
+          godot --headless --check-only scripts/*.gd
+          godot --headless --check-only tests/**/*.gd
+
+  combat-tests:
+    name: Combat Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Godot Engine
+        uses: GodotEngine/godot-action@v2
+        with:
+          version: 4.7.2
+
+      - name: Run test suite
+        run: |
+          godot --headless --path . tests/test_runner.tscn
+        continue-on-error: false
+
+  export-test:
+    name: Export Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Godot Engine
+        uses: GodotEngine/godot-action@v2
+        with:
+          version: 4.7.2
+
+      - name: Verify export configuration
+        run: |
+          godot --headless --check-only .
+        continue-on-error: false

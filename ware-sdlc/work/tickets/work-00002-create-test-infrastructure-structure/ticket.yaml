@@ -1,0 +1,26 @@
+work:
+  id: work-00002-create-test-infrastructure-structure
+  title: Create test infrastructure structure
+  type: chore
+  state: completed
+  created_by: user
+  assignee: user
+epics:
+  - id: epic-00002-testing-infrastructure-for-d-d
+depends_on: []
+tags: []
+timestamps:
+  created_at: "2026-10-28T00:00:00Z"
+  started_at: "2026-10-28T00:00:00Z"
+  completed_at: "2026-10-28T00:00:00Z"
+artifacts:
+  intent:
+    state: ready
+  spec:
+    state: ready
+  plan:
+    state: ready
+estimation:
+  method: points
+  ai_story_points_before_work: 8
+  ai_story_points_after_work: 6

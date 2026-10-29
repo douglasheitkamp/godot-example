@@ -1,0 +1,4 @@
+epic:
+  id: epic-00002-testing-infrastructure-for-d-d
+  title: Testing Infrastructure for D&D 5e RPG
+  outcome: Automated testing infrastructure including unit tests, CI/CD pipeline, and custom agents for validating D&D 5e combat mechanics and enabling AI-driven SDLC iteration
