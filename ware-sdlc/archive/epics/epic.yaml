@@ -1,0 +1,8 @@
+epic:
+  id: epic-00001-d-d-5e-rpg-prototype
+  title: D&D 5e RPG Prototype
+  outcome: A working Godot prototype demonstrating D&D 5e rules in a 2D RPG with fighter class, open world exploration, and turn-based combat
+  status: completed
+  completed_at: "2026-10-29T08:00:00Z"
+  tickets:
+    - work-00001-d-d-5e-rpg-prototype

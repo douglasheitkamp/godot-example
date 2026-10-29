@@ -3,7 +3,7 @@ work:
   id: "work-00001-d-d-5e-rpg-prototype" # Five-digit component; stable and matches folder.
   title: "D&D 5e RPG Prototype"
   type: "feature" # One of the project's configured ticket_types.
-  state: in-progress # ready | in-progress | review | completed | rejected
+  state: completed # ready | in-progress | review | completed | rejected
   created_by: "user" # Confirmed user identity
   assignee: claude # Required before in-progress.
   rejected_reason: null # Only on rejected work: why it was decided against.
@@ -18,7 +18,7 @@ tags: []
 timestamps:
   created_at: "2026-10-26T20:00:00Z" # Required actual UTC timestamp when a ticket is created.
   started_at: '2026-10-27T09:00:48Z' # First in-progress transition; never reset on resume.
-  completed_at: null # Set at accepted completion.
+  completed_at: "2026-10-29T08:00:00Z" # Set at accepted completion.
   rejected_at: null # Only on rejected work: when it was decided against.
 
 artifacts:
